@@ -27,23 +27,16 @@ def add_contact(args, contacts):
 @input_error
 def change_contact(args, contacts):
     name, phone = args
-    if name in contacts:
-        contacts[name] = phone
-        return "Contact updated."
-    else:
-        raise KeyError
+    contacts[name] = phone  
+    return "Contact updated."
 
 
 @input_error
 def show_phone(args, contacts):
     name = args[0]
-    if name in contacts:
-        return contacts[name]
-    else:
-        raise KeyError
+    return contacts[name]  
 
 
-@input_error
 def show_all(contacts):
     if not contacts:
         return "No contacts saved."
